@@ -3,6 +3,7 @@ Wikipedia and Digikala Web Scraper
 This project contains two web scrapers for extracting data from Wikipedia and Digikala. The Wikipedia scraper (wiki_crawler.py) extracts data from book-related Wikipedia pages. The Digikala scraper (digikala/digikala_crawler.js) extracts product data (title, price, color, URL, HTML) from Books, Women's Clothing, Cooking, Laptop, and Phone categories. Data is saved to CSV files, and HTML pages are stored for debugging.
 Features
 
+
 Digikala Scraper (digikala/digikala_crawler.js):
 Scrapes products from:
 Books: https://www.digikala.com/search/category-book/
@@ -68,6 +69,8 @@ Output: CSV (output/wiki_data.csv); HTML (wiki_pages/).
 
 
 Project Structure
+
+
 wikipedia/
 ├── digikala/
 │   ├── digikala_crawler.js       # Digikala scraper for Books, Clothes, Cooking, Laptop, Phone
@@ -85,6 +88,9 @@ wikipedia/
 ├── output/
 │   └── wiki_data.csv             # Wikipedia data
 └── README.md                     # This file
+
+
+
 
 Notes
 
