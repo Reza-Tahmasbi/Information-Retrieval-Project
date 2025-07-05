@@ -1,0 +1,13 @@
+node_modules/
+npm-debug.log
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+digikala/output/digikala_data.csv
+output/wiki_data.csv
+digikala/digikala_pages/
+wiki_pages/
+debug_category_*.html
+chromedriver/chromedriver.exe
+.venv/
