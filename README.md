@@ -102,14 +102,6 @@ For CAPTCHAs, reduce maxProducts or add a proxy in digikala_crawler.js:options.a
 
 
 
-Troubleshooting
-
-No links scraped: Inspect category pages in Chrome DevTools:document.querySelectorAll('a[href*="/product/dkp-"]').forEach(el => console.log(el.href));
-
-Try div.products-grid a[href*="/product/dkp-"] if needed.
-Selector errors: Check HTML files in digikala/digikala_pages/[category]/ or wiki_pages/. For Clothes, update title/price selectors in digikala_crawler.js.
-GCM/TensorFlow errors: Unrelated; ignore unless critical.
-
 License
 MIT License. See LICENSE file.
 Contributing
