@@ -1,4 +1,4 @@
-node_modules/
+digikala/node_modules
 npm-debug.log
 __pycache__/
 *.pyc
@@ -11,3 +11,4 @@ wiki_pages/
 debug_category_*.html
 chromedriver/chromedriver.exe
 .venv/
+digikala/debug_category_*.html
