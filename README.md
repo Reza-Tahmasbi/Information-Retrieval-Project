@@ -1,4 +1,5 @@
 Wikipedia and Digikala Web Scraper
+
 This project contains two web scrapers for extracting data from Wikipedia and Digikala. The Wikipedia scraper (wiki_crawler.py) extracts data from book-related Wikipedia pages. The Digikala scraper (digikala/digikala_crawler.js) extracts product data (title, price, color, URL, HTML) from Books, Women's Clothing, Cooking, Laptop, and Phone categories. Data is saved to CSV files, and HTML pages are stored for debugging.
 Features
 
@@ -33,7 +34,7 @@ ChromeDriver: Place at E:/Files/wikipeadia/chromedriver/chromedriver.exe or upda
 
 Installation
 
-Clone the repository:git clone https://github.com/your-username/wikipedia.git
+Clone the repository:git clone :https://github.com/Reza-Tahmasbi/Information-Retrieval-Project.git
 cd wikipedia
 
 
