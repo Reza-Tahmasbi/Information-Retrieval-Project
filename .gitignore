@@ -1,14 +1,6 @@
-digikala/node_modules
-digikala/debug_category_*.html
-igikala/output/digikala_data.csv
-output/wiki_data.csv
-digikala/digikala_pages/
-chromedriver/chromedriver.exe
-npm-debug.log
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-wiki_pages/
-debug_category_*.html
-.venv/
+# Ignore Python virtual environment
+myenv/
+
+# Ignore raw data folders
+data/raw/digikala_pages/
+data/raw/wikipedia_pages/

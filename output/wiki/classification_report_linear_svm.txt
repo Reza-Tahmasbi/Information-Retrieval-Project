@@ -1,0 +1,15 @@
+Evaluation for Linear SVM (wiki project):
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       Books       0.92      1.00      0.96        12
+      Movies       1.00      0.90      0.95        10
+
+    accuracy                           0.95        22
+   macro avg       0.96      0.95      0.95        22
+weighted avg       0.96      0.95      0.95        22
+
+F1 Score: 0.9543
+Precision: 0.9580
+Recall: 0.9545
