@@ -1,108 +1,66 @@
-Wikipedia and Digikala Web Scraper
+# Wikipedia and Digikala Web Scraper & Analysis
 
-This project contains two web scrapers for extracting data from Wikipedia and Digikala. The Wikipedia scraper (wiki_crawler.py) extracts data from book-related Wikipedia pages. The Digikala scraper (digikala/digikala_crawler.js) extracts product data (title, price, color, URL, HTML) from Books, Women's Clothing, Cooking, Laptop, and Phone categories. Data is saved to CSV files, and HTML pages are stored for debugging.
-Features
+This project is a comprehensive web scraping and data analysis toolset designed to extract and process data from Wikipedia and Digikala. It includes web scrapers for collecting data, preprocessing scripts, and machine learning (ML) pipelines for classification and clustering. The Wikipedia scraper extracts book-related data, while the Digikala scraper gathers product information across multiple categories. The project also features ML analysis using Python, saving results as CSVs, HTML files, and visualizations.
 
+## Features
 
-Digikala Scraper (digikala/digikala_crawler.js):
-Scrapes products from:
-Books: https://www.digikala.com/search/category-book/
-Women's Clothing: https://www.digikala.com/search/category-women-clothing/
-Cooking: https://www.digikala.com/search/category-cooking/
-Laptop: https://www.digikala.com/search/notebook-netbook-ultrabook/?attributes%5B2316%5D%5B0%5D=21388&sort=7&camCode=2174
-Phone: https://www.digikala.com/search/category-mobile-phone/
+### Digikala Scraper
+- **Target Categories and URLs**:
+  - Books: [https://www.digikala.com/search/category-book/](https://www.digikala.com/search/category-book/)
+  - Women's Clothing: [https://www.digikala.com/search/category-women-clothing/](https://www.digikala.com/search/category-women-clothing/)
+  - Cooking: [https://www.digikala.com/search/category-cooking/](https://www.digikala.com/search/category-cooking/)
+  - Laptops: [https://www.digikala.com/search/notebook-netbook-ultrabook/?attributes%5B2316%5D%5B0%5D=21388&sort=7&camCode=2174](https://www.digikala.com/search/notebook-netbook-ultrabook/?attributes%5B2316%5D%5B0%5D=21388&sort=7&camCode=2174)
+  - Phones: [https://www.digikala.com/search/category-mobile-phone/](https://www.digikala.com/search/category-mobile-phone/)
+- **Data Extracted**: Product titles, prices, colors, URLs, and associated HTML content.
+- **Output**:
+  - CSV: `digikala_data.csv` (columns: `Category`, `Title`, `Price`, `color`, `URL`, `HTML_File`).
+  - HTML: Stored in category-specific subdirectories (e.g., `digikala_pages/books/`, `digikala_pages/clothes/`).
+- **Technology**: Uses Node.js with Selenium WebDriver and headless Chrome.
 
+### Wikipedia Scraper
+- **Target Data**: Book-related content from Wikipedia pages.
+- **Data Extracted**: Text content, categories, and titles (details in `wiki_crawler.py`).
+- **Output**:
+  - CSV: `wiki_data.csv`.
+  - HTML: Stored in `wiki_pages/` for debugging.
+- **Technology**: Uses Python with Selenium and headless Chrome.
 
-Extracts product titles, prices, colors, URLs, and saves HTML.
-Saves data to digikala/output/digikala_data.csv (columns: Category, Title, Price, color, URL, HTML_File).
-Saves HTML in digikala/digikala_pages/[books|clothes|cooking|laptop|phone]/.
+### Machine Learning Analysis
+- **Preprocessing**: Adapts to both datasets (Wikipedia and Digikala) with project-specific text processing (e.g., Persian support for Digikala).
+- **Features**:
+  - Classification: Implements Naive Bayes, Linear SVM, and Random Forest.
+  - Clustering: Uses K-means clustering.
+  - Visualization: Generates word clouds, confusion matrices, and saves metrics.
+- **Output**: Saved in `output/wiki/` or `output/digi/` (e.g., `wordcloud_*.png`, `confusion_matrix_*.png`, `classification_report_*.txt`, `clustering_metrics.txt`).
+- **Technology**: Python with scikit-learn, NLTK, hazm (for Persian), and matplotlib.
 
+## Prerequisites
 
-Wikipedia Scraper (wiki_crawler.py):
-Scrapes book-related data from Wikipedia pages.
-Saves data to output/wiki_data.csv.
-Saves HTML pages in wiki_pages/ for various books.
+- **Node.js**: Version 14 or higher (for Digikala scraper).
+- **Python**: Version 3.6 or higher (for Wikipedia scraper and ML).
+- **Chrome Browser**: Compatible with ChromeDriver (e.g., Chrome 138 or later).
+- **ChromeDriver**: Download from [ChromeDriver downloads](https://chromedriver.chromium.org/downloads) and place at `E:/Files/wikipeadia/chromedriver/chromedriver.exe` or update the path in the scraper scripts.
+- **Python Dependencies**: Install via `pip install selenium pandas numpy scikit-learn nltk matplotlib wordcloud hazm`.
+- **NLTK Data**: Download required data by running `python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('wordnet')"`.
+- **Node.js Dependencies**: Install via `npm install selenium-webdriver csv-writer` in the Digikala directory.
 
+## Installation
 
-Uses headless Chrome for efficient scraping.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Reza-Tahmasbi/Information-Retrieval-Project.git
+   cd Information-Retrieval-Project
+   ```
 
-Prerequisites
+   0. install chrome driver in case you want to crawl
+   ```bash
+   1. pip install -r requirements.txt
+   ```
 
-Node.js: Version 14 or higher (for Digikala).
-Python: Version 3.6 or higher (for Wikipedia).
-Chrome Browser: Compatible with ChromeDriver (e.g., Chrome 138).
-ChromeDriver: Place at E:/Files/wikipeadia/chromedriver/chromedriver.exe or update path in digikala/digikala_crawler.js.
+   2. cd digikala
+   ```bash
+    npm install selenium-webdriver csv-writer
+   ```
+   3. python nltk_packages.py
+   4. python main.py (adjust the project variable, whether 'wiki' or 'digi')
 
-Installation
-
-Clone the repository:git clone :https://github.com/Reza-Tahmasbi/Information-Retrieval-Project.git
-cd wikipedia
-
-
-Install Digikala dependencies:cd digikala
-npm install selenium-webdriver csv-writer
-
-
-Install Wikipedia dependencies:pip install selenium
-
-
-Download ChromeDriver:
-Get the version matching your Chrome browser from ChromeDriver downloads.
-Place at E:/Files/wikipeadia/chromedriver/chromedriver.exe or update path.
-
-
-
-Usage
-
-Run Digikala scraper:cd digikala
-node digikala_crawler.js
-
-
-Output: CSV (digikala/output/digikala_data.csv); HTML (digikala/digikala_pages/[books|clothes|cooking|laptop|phone]/).
-
-
-Run Wikipedia scraper:python wiki_crawler.py
-
-
-Output: CSV (output/wiki_data.csv); HTML (wiki_pages/).
-
-
-
-Project Structure
-
-
-wikipedia/
-├── digikala/
-│   ├── digikala_crawler.js       # Digikala scraper for Books, Clothes, Cooking, Laptop, Phone
-│   ├── digikala_pages/           # Digikala HTML files
-│   │   ├── books/                # Books HTML files
-│   │   ├── clothes/              # Clothes HTML files
-│   │   ├── cooking/              # Cooking HTML files
-│   │   ├── laptop/               # Laptop HTML files
-│   │   ├── phone/                # Phone HTML files
-│   ├── output/
-│   │   └── digikala_data.csv     # Digikala data
-│   └── package.json              # Node.js dependencies
-├── wiki_crawler.py               # Wikipedia scraper for books
-├── wiki_pages/                   # Wikipedia HTML files for books
-├── output/
-│   └── wiki_data.csv             # Wikipedia data
-└── README.md                     # This file
-
-
-
-
-Notes
-
-The Digikala scraper targets up to 10 products per category to avoid rate-limiting.
-For Clothes, verify selectors h3.ellipsis-2.text-body2-strong.text-neutral-700.styles_VerticalProductCard__productTitle__6zjjN (title) and span[data-testid="price-final"] (price) in digikala/digikala_pages/clothes/. The current script uses incorrect selectors for Clothes.
-The color field may not apply to all categories (e.g., Books, Laptops); expect N/A for some products.
-Update Wikipedia section with wiki_crawler.py details (e.g., URLs, data extracted).
-For CAPTCHAs, reduce maxProducts or add a proxy in digikala_crawler.js:options.addArguments('--proxy-server=http://your-proxy:port');
-
-
-
-License
-MIT License. See LICENSE file.
-Contributing
-Open issues or pull requests to improve the scrapers!

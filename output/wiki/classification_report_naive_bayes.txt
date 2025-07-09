@@ -1,0 +1,15 @@
+Evaluation for Naive Bayes (wiki project):
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       Books       0.90      0.75      0.82        12
+      Movies       0.75      0.90      0.82        10
+
+    accuracy                           0.82        22
+   macro avg       0.82      0.82      0.82        22
+weighted avg       0.83      0.82      0.82        22
+
+F1 Score: 0.8182
+Precision: 0.8318
+Recall: 0.8182
