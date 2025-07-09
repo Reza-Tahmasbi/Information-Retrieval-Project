@@ -51,19 +51,28 @@ This project is a comprehensive web scraping and data analysis toolset designed 
    git clone https://github.com/Reza-Tahmasbi/Information-Retrieval-Project.git
    cd Information-Retrieval-Project
    ```
-
-   1. install chrome driver in case you want to crawl
+   install chrome driver in case for crawling
 
    ```bash
    pip install -r requirements.txt
    ```
-
-   2. cd digikala
+   
+   ```bash
+    cd digikala
+    npm install selenium-webdriver csv-writer
+   ```
 
    ```bash
     npm install selenium-webdriver csv-writer
    ```
 
-   3. python nltk_packages.py
-   4. python main.py (adjust the project variable, whether 'wiki' or 'digi')
+   ```bash
+   python nltk_packages.py
+   ```
+
+  ```bash
+   python main.py
+   ```
+   
+
 
